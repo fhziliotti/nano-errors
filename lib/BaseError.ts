@@ -93,7 +93,7 @@ export class BaseError extends Error {
         // Try to get clean stack gracefully
         this._cleanStack = require('clean-stack');
       } catch (exception) {
-        console.warn('Dependency "clean-stack" is not supported in this platform, errors will be ignored', exception);
+        //console.warn('Dependency "clean-stack" is not supported in this platform, errors will be ignored', exception);
       }
     }
   }
@@ -109,7 +109,7 @@ export class BaseError extends Error {
       try {
         stack = this._cleanStack(this.stack);
       } catch (exception) {
-        console.warn('Dependency "clean-stack" is not supported in this platform, errors will be ignored', exception);
+        //console.warn('Dependency "clean-stack" is not supported in this platform, errors will be ignored', exception);
       }
     }
 

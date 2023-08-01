@@ -1,12 +1,10 @@
-import { Options } from "@sentry/types";
-import * as Transport from "winston-transport";
-export interface SentryTransportOptions extends Options, Transport.TransportStreamOptions {
-    sentryPackage?: "browser" | "node" | "react-native" | "electron";
+import * as Sentry from '@sentry/node';
+import * as Transport from 'winston-transport';
+export interface SentryTransportOptions extends Sentry.NodeOptions, Transport.TransportStreamOptions {
 }
 export declare class SentryTransport extends Transport {
     readonly name = "Sentry";
     options: SentryTransportOptions;
-    protected Sentry: any;
     constructor(options: SentryTransportOptions);
     log(info: {
         level: string;
